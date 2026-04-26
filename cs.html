@@ -291,13 +291,71 @@
 
     @media print {
       body { background: white; max-width: 100%; padding: 0.5rem 1rem; }
-      nav, footer, .recommend, .lang-switch { display: none; }
-      .top-photos figure { display: none; }
+      /* hide nav/footer/lang in print but keep recommendations and photos */
+      nav, footer, .lang-switch { display: none; }
       .top-photos { display: block; }
+      .top-photos figure { display: block; }
       .top-photos img.bild { width: 160px; float: right; margin: 0 0 0.5rem 1rem; }
       .solo-photo img { max-width: 180px; }
-      section + section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #ccc; }
-      table, ol { break-inside: avoid; }
+
+      /* Start each recipe section on a new printed page */
+      section {
+        break-before: page;
+        page-break-before: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+      }
+      section:first-of-type { break-before: auto; page-break-before: auto; }
+
+      /* Keep final product photo at the top in print; move original-recipe figure and recommendations to the bottom */
+      .top-photos { display: contents; }
+      .top-photos > img.bild {
+        order: -1;
+        width: 160px;
+        float: none;
+        margin: 0 auto 0.5rem;
+        display: block;
+        align-self: center;
+      }
+      .top-photos > figure {
+        order: 99;
+        page-break-inside: avoid;
+        margin-top: 0.5rem;
+      }
+      .recommend {
+        order: 100;
+        margin-top: 1rem;
+        page-break-inside: avoid;
+        display: block;
+      }
+
+      /* remove inter-section borders (pages separate sections) */
+      section + section { margin-top: 0; padding-top: 0; border-top: none; }
+
+      table, ol {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        -webkit-page-break-inside: avoid;
+      }
+
+      /* Keep headings with their following content (avoid orphaned headings) */
+      h2, h3 {
+        orphans: 2;
+        widows: 2;
+        page-break-after: avoid;
+        break-after: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Prevent breaking between a heading and the next list/table */
+      h2 + table, h2 + ol, h3 + table, h3 + ol {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        page-break-before: avoid;
+      }
       h2 { font-size: 1.2rem; }
       h3 { font-size: 0.72rem; margin-top: 0.8rem; }
       td, ol li, .timing, .variant-note { font-size: 0.85rem; }
