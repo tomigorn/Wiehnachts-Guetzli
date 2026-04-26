@@ -36,6 +36,24 @@
       background: #fdfaf5;
     }
 
+      /* Mobile: hide long nav links and show compact burger */
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.35rem;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+      }
+      .nav-toggle .bar {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #666;
+        margin: 4px 0;
+        border-radius: 2px;
+      }
+
     nav .links { flex: 1; }
 
     nav .links a {
@@ -232,6 +250,12 @@
     @media (max-width: 560px) {
       .top-photos { flex-direction: column; }
       .top-photos figure { flex: unset; width: 100%; }
+
+      /* On small screens hide nav links and show only lang flags + burger */
+      nav .links { display: none; }
+      .nav-toggle { display: inline-flex; align-items: center; }
+      .lang-switch { gap: 0.35rem; }
+      .lang-switch a, .lang-switch .lang-active { font-size: 0.96rem; }
     }
 
     .variant-note {
@@ -265,6 +289,11 @@
 <p class="site-sub">Rezept von Grosi</p>
 
 <nav>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menü">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
   <div class="links">
     <a href="#nusskoerbchen">Nusskörbchen</a>
     <a href="#schokoladenkugeln">Schokoladenkugeln</a>
@@ -278,6 +307,26 @@
     <a href="cs.html">🇨🇿 Česky</a>
   </div>
 </nav>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.links');
+    if(!btn || !links) return;
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if(!expanded) {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.gap = '0.6rem';
+        links.style.marginBottom = '0.6rem';
+      } else {
+        links.style.display = '';
+      }
+    });
+  })();
+</script>
 
 
 <!-- ═══════════════════════════════════════
@@ -476,7 +525,7 @@
 ════════════════════════════════════════ -->
 <section id="vanillekipferl">
 
-  <h2>Vanillekipferl</h2>
+  <h2>Vanille Gipfeli</h2>
   <p class="meta">Ca. 40 Stück</p>
 
   <div class="top-photos">
