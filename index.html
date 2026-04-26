@@ -43,22 +43,30 @@
 
     nav .links a:hover { text-decoration: underline; }
 
-    .lang {
-      text-decoration: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.2rem 0.35rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: inline-flex;
+    .lang-switch {
+      display: flex;
       align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+      white-space: nowrap;
+      font-size: 0.88rem;
     }
 
-    .lang:hover { background: #f0ece4; }
+    .lang-switch .sep { color: #ccc; }
 
-    .lang img.emoji {
-      height: 1.4rem;
+    .lang-switch a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .lang-switch a:hover { color: #1a1a1a; text-decoration: underline; }
+
+    .lang-active { color: #1a1a1a; font-weight: 600; }
+
+    .lang-switch img.emoji {
+      height: 1rem;
       width: auto;
+      vertical-align: middle;
     }
 
     section + section {
@@ -237,7 +245,11 @@
     <a href="#vanillekipferl">Vanillekipferl</a>
     <a href="#linzer">Linzer Guetzli</a>
   </div>
-  <a href="cs.html" class="lang">🇨🇿</a>
+  <div class="lang-switch">
+    <span class="lang-active">🇨🇭 Deutsch</span>
+    <span class="sep">|</span>
+    <a href="cs.html">🇨🇿 Česky</a>
+  </div>
 </nav>
 
 
@@ -532,6 +544,6 @@
   <a href="cs.html">→ Česky</a>
 </footer>
 
-<script>twemoji.parse(document.querySelector('.lang'));</script>
+<script>twemoji.parse(document.querySelector('.lang-switch'));</script>
 </body>
 </html>
