@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weihnachtsguetzli – Rezept von Grosi</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+      color: #1a1a1a;
+      background: #fdfaf5;
+      line-height: 1.75;
+    }
+
+    h1 { font-size: 2.2rem; margin: 0 0 0.2rem; }
+
+    .site-sub {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 2.5rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav .links { flex: 1; }
+
+    nav .links a {
+      color: #555;
+      text-decoration: none;
+      margin-right: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    nav .links a:hover { text-decoration: underline; }
+
+    .lang {
+      font-size: 0.78rem;
+      color: #555;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 0.22rem 0.65rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .lang:hover { background: #f0ece4; }
+
+    section + section {
+      border-top: 1px solid #ddd;
+      margin-top: 4rem;
+      padding-top: 3.5rem;
+    }
+
+    h2 { font-size: 1.85rem; margin: 0 0 0.15rem; }
+
+    .meta {
+      color: #888;
+      font-style: italic;
+      font-size: 0.93rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .top-photos {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .top-photos img.bild {
+      flex: 1;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .top-photos figure {
+      flex: 0 0 185px;
+      margin: 0;
+    }
+
+    .top-photos figure img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+
+    .top-photos figcaption {
+      font-size: 0.72rem;
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    .solo-photo { margin-bottom: 1.6rem; }
+
+    .solo-photo img {
+      max-width: 380px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+
+    .solo-photo figcaption {
+      font-size: 0.72rem;
+      color: #aaa;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #999;
+      margin: 1.6rem 0 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #e8e0d0;
+    }
+
+    table { border-collapse: collapse; width: 100%; }
+
+    td {
+      padding: 0.22rem 0.3rem;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #ede5d8;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    td:last-child {
+      text-align: right;
+      font-weight: bold;
+      white-space: nowrap;
+      padding-left: 1rem;
+    }
+
+    ol { padding-left: 1.4rem; margin: 0; }
+
+    ol li {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timing {
+      font-size: 0.82rem;
+      color: #aaa;
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .recommend {
+      margin-top: 1.5rem;
+      padding: 0.85rem 1rem;
+      background: #fdf6e8;
+      border: 1px solid #e2c97a;
+      border-radius: 4px;
+    }
+
+    .recommend p {
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: #6b4700;
+      margin: 0 0 0.65rem;
+    }
+
+    .recommend figure {
+      display: inline-block;
+      vertical-align: top;
+      width: 110px;
+      margin: 0 0.75rem 0 0;
+      text-align: center;
+    }
+
+    .recommend figure img {
+      width: 100%;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+
+    .recommend figcaption {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 0.25rem;
+      line-height: 1.3;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .top-photos { flex-direction: column; }
+      .top-photos figure { flex: unset; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Weihnachtsguetzli</h1>
+<p class="site-sub">Rezept von Grosi</p>
+
+<nav>
+  <div class="links">
+    <a href="#nusskoerbchen">Nusskörbchen</a>
+    <a href="#schokoladenkugeln">Schokoladenkugeln</a>
+    <a href="#nussguetzli">Nussguetzli</a>
+    <a href="#vanillekipferl">Vanillekipferl</a>
+    <a href="#linzer">Linzer Guetzli</a>
+  </div>
+  <a href="cs.html" class="lang">CS</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     NUSSKÖRBCHEN
+════════════════════════════════════════ -->
+<section id="nusskoerbchen">
+
+  <h2>Nusskörbchen</h2>
+  <p class="meta">Mit Rumfüllung · ca. 40 Stück</p>
+
+  <div class="top-photos">
+    <img class="bild" src="photos/orechy-sample-bild.png" alt="Nusskörbchen mit Rumfüllung">
+    <figure>
+      <img src="photos/orechy-rezept.png" alt="Grosis Originalrezept">
+      <figcaption>Grosis Originalrezept</figcaption>
+    </figure>
+  </div>
+
+  <h3>Teig</h3>
+  <table>
+    <tr><td>Weissmehl</td>               <td>200 g</td></tr>
+    <tr><td>gemahlene Walnüsse</td>      <td>140 g</td></tr>
+    <tr><td>Puderzucker</td>             <td>100 g</td></tr>
+    <tr><td>kalte Butter</td>            <td>160 g</td></tr>
+  </table>
+
+  <h3>Füllung</h3>
+  <table>
+    <tr><td>Butter (Zimmertemperatur)</td>  <td>200 g</td></tr>
+    <tr><td>Löffelbiscuits</td>             <td>2 Päckchen</td></tr>
+    <tr><td>Rum</td>                        <td>½ dl</td></tr>
+    <tr><td>Kakao</td>                      <td>2 EL</td></tr>
+  </table>
+
+  <h3>Zubereitung</h3>
+  <ol>
+    <li>Aus Weissmehl, gemahlenen Walnüssen, Puderzucker und kalter Butter rasch einen krümeligen Teig kneten.</li>
+    <li>Den Teig in kleine Förmchen drücken und mit dem Daumen Körbchen mit dünnen Wänden formen.</li>
+    <li>Bei <strong>160 °C</strong> ca. 12–15 Minuten backen – die Körbchen sollen hellrosa oder cremig weiss sein, <strong>dürfen nicht braun werden</strong>.</li>
+    <li>Noch warm vorsichtig aus den Förmchen klopfen und vollständig auskühlen lassen.</li>
+    <li>Löffelbiscuits fein zerbröseln (im Mixer oder mit dem Wallholz im Plastikbeutel). Butter schaumig rühren, die zerbröstelten Biskuits, Rum und Kakao dazugeben und gut verrühren.</li>
+    <li>Die ausgekühlten Körbchen mit der Rumfüllung füllen.</li>
+    <li>Die Körbchen mit flüssiger Schokolade übergiessen oder bis zur Hälfte eintauchen, sodass die untere Hälfte vollständig mit Schokolade überzogen ist. Noch vor dem Aushärten mit bunten Zuckerstreusel bestreuen.</li>
+  </ol>
+
+  <div class="recommend">
+    <p>☞ Grosi empfiehlt</p>
+    <figure>
+      <img src="photos/orechy-gemahlene-wallnüsse.png" alt="Bella Walnüsse gerieben">
+      <figcaption>Bella – gemahlene Walnüsse</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/orechy-streusel.png" alt="Pâtissier Zuckerstreusel">
+      <figcaption>Pâtissier – Zuckerstreusel</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/orechy-löffelbiscuit-vorne.png" alt="Migros Löffelbiscuits Vorderseite">
+      <figcaption>Migros – Löffelbiscuits</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/orechy-löffelbiscuit-hinten.png" alt="Migros Löffelbiscuits Rückseite">
+      <figcaption>(Rückseite)</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/wallnuss-guetzli-form.png" alt="Walnuss-Backförmchen">
+      <figcaption>Walnuss-Backförmchen – z.B. bei Amazon erhältlich</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SCHOKOLADENKUGELN
+════════════════════════════════════════ -->
+<section id="schokoladenkugeln">
+
+  <h2>Schokoladenkugeln</h2>
+  <p class="meta">Ohne Backen · ca. 30 Stück</p>
+
+  <div class="top-photos">
+    <img class="bild" src="photos/cok-koule-bild.png" alt="Schokoladenkugeln">
+    <figure>
+      <img src="photos/cok-koule-rezept.png" alt="Grosis Originalrezept">
+      <figcaption>Grosis Originalrezept</figcaption>
+    </figure>
+  </div>
+
+  <h3>Zutaten</h3>
+  <table>
+    <tr><td>Löffelbiscuits</td>              <td>200 g</td></tr>
+    <tr><td>Butter (Zimmertemperatur)</td>   <td>100 g</td></tr>
+    <tr><td>Puderzucker</td>                 <td>100 g</td></tr>
+    <tr><td>gemahlene Walnüsse</td>          <td>50 g</td></tr>
+    <tr><td>Kakao</td>                       <td>30 g</td></tr>
+    <tr><td>Rum</td>                         <td>4 EL</td></tr>
+    <tr><td>Himbeersirup</td>                <td>4 EL</td></tr>
+    <tr><td>Kokosraspeln</td>                <td>nach Bedarf</td></tr>
+  </table>
+
+  <h3>Zubereitung</h3>
+  <ol>
+    <li>Löffelbiscuits fein zerbröseln – im Mixer oder mit dem Wallholz im Plastikbeutel.</li>
+    <li>Alle Zutaten in einer Schüssel zu einer gleichmässigen Masse vermengen.</li>
+    <li>Ist die Masse zu weich, 30 Minuten im Kühlschrank kühlen.</li>
+    <li>Mit feuchten Händen Kugeln von ca. 3 cm Durchmesser formen.</li>
+    <li>Jede Kugel in Kokosraspeln wälzen.</li>
+    <li>Kalt stellen und mindestens 1 Stunde fest werden lassen.</li>
+  </ol>
+
+  <div class="recommend">
+    <p>☞ Grosi empfiehlt</p>
+    <figure>
+      <img src="photos/cokoladove-koule-gemahlene-wallnüsse.png" alt="Bella Walnüsse gerieben">
+      <figcaption>Bella – gemahlene Walnüsse</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/orechy-löffelbiscuit-vorne.png" alt="Migros Löffelbiscuits Vorderseite">
+      <figcaption>Migros – Löffelbiscuits</figcaption>
+    </figure>
+    <figure>
+      <img src="photos/orechy-löffelbiscuit-hinten.png" alt="Migros Löffelbiscuits Rückseite">
+      <figcaption>(Rückseite)</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     GEFÜLLTE NUSSGUETZLI
+════════════════════════════════════════ -->
+<section id="nussguetzli">
+
+  <h2>Gefüllte Nussguetzli</h2>
+  <p class="meta">Ca. 30 Stück · ca. 160 kcal/Stück</p>
+
+  <figure class="solo-photo">
+    <img src="photos/slepovane-orechove-kolacky-rezept.png" alt="Rezept aus einer Zeitschrift">
+    <figcaption>Rezept aus einer Zeitschrift</figcaption>
+  </figure>
+
+  <h3>Teig</h3>
+  <table>
+    <tr><td>Halbweissmehl</td>                <td>250 g</td></tr>
+    <tr><td>Zucker</td>                       <td>75 g</td></tr>
+    <tr><td>Butter</td>                       <td>150 g</td></tr>
+    <tr><td>Ei</td>                           <td>1 Stk.</td></tr>
+    <tr><td>Salz</td>                         <td>1 Prise</td></tr>
+    <tr><td>gemahlene Walnusskerne</td>       <td>80 g</td></tr>
+  </table>
+
+  <h3>Füllung</h3>
+  <table>
+    <tr><td>Butter</td>                  <td>50 g</td></tr>
+    <tr><td>Zucker</td>                  <td>50 g</td></tr>
+    <tr><td>gemahlene Walnüsse</td>      <td>40 g</td></tr>
+    <tr><td>Aprikosenkonfitüre</td>      <td>75 g</td></tr>
+    <tr><td>Rum</td>                     <td>1 EL</td></tr>
+  </table>
+
+  <h3>Zum Fertigstellen</h3>
+  <table>
+    <tr><td>Zartbitterschokolade</td>                      <td>100 g</td></tr>
+    <tr><td>Schlagrahm</td>                                <td>2 EL</td></tr>
+    <tr><td>halbierte Walnusskerne (Dekoration)</td>       <td>80 g</td></tr>
+    <tr><td>Puderzucker (zum Bestäuben)</td>               <td>1 EL</td></tr>
+  </table>
+
+  <h3>Zubereitung</h3>
+  <ol>
+    <li>Aus Halbweissmehl, Zucker, Butter, Ei, Salz und gemahlenen Walnüssen rasch einen glatten Teig kneten. In Frischhaltefolie einwickeln und 1 Stunde im Kühlschrank ruhen lassen.</li>
+    <li>Den Ofen auf <strong>180 °C</strong> vorheizen. Den Teig auf der bemehlten Arbeitsfläche ca. 5 mm dick ausrollen und runde Guetzli (ca. 4,5 cm) ausstechen. Auf ein mit Backpapier belegtes Blech legen.</li>
+    <li>Ca. 15 Minuten goldbraun backen. Vollständig auskühlen lassen.</li>
+    <li>Für die Füllung: Butter schmelzen, Zucker, gemahlene Walnüsse, Aprikosenkonfitüre und Rum dazugeben und gut verrühren.</li>
+    <li>Die Hälfte der Guetzli mit der Füllung bestreichen und mit der zweiten Hälfte zusammenklappen.</li>
+    <li>Schokolade im Wasserbad schmelzen, mit Schlagrahm verrühren und die Guetzli damit bestreichen.</li>
+    <li>Je eine Walnusshälfte auf die Schokolade legen und leicht mit Puderzucker bestäuben.</li>
+  </ol>
+
+  <p class="timing">⏱ Vorbereitung: ~60 Min. · Kühlzeit: 1 Std. · Backzeit: ~15 Min.</p>
+
+  <div class="recommend">
+    <p>☞ Grosi empfiehlt</p>
+    <figure>
+      <img src="photos/slepovane-orechove-kolacky-gemahlene-wallnüsse.png" alt="Bella Walnüsse gerieben">
+      <figcaption>Bella – gemahlene Walnüsse</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     VANILLEKIPFERL
+════════════════════════════════════════ -->
+<section id="vanillekipferl">
+
+  <h2>Vanillekipferl</h2>
+  <p class="meta">Ca. 40 Stück</p>
+
+  <div class="top-photos">
+    <img class="bild" src="photos/vanilkove-rohlicky-bild.png" alt="Vanillekipferl">
+    <figure>
+      <img src="photos/vanilkove-rohlicky-recept.png" alt="Rezept aus einem alten Kochbuch">
+      <figcaption>Rezept aus einem alten Kochbuch</figcaption>
+    </figure>
+  </div>
+
+  <h3>Zutaten</h3>
+  <table>
+    <tr><td>Weissmehl</td>                               <td>150 g</td></tr>
+    <tr><td>Zucker</td>                                  <td>20 g</td></tr>
+    <tr><td>kalte Butter</td>                            <td>110 g</td></tr>
+    <tr><td>geschälte Mandeln (fein gerieben)</td>       <td>50 g</td></tr>
+    <tr><td>Eigelb</td>                                  <td>1 Stk.</td></tr>
+    <tr><td>gemahlene Vanille</td>                       <td>½ TL</td></tr>
+    <tr><td>abgeriebene Zitronenschale</td>              <td>½ Zitrone</td></tr>
+  </table>
+
+  <h3>Zum Wälzen</h3>
+  <table>
+    <tr><td>Vanillezucker</td>  <td>80 g</td></tr>
+  </table>
+
+  <h3>Zubereitung</h3>
+  <ol>
+    <li>Weissmehl auf die Arbeitsfläche geben, Zucker, Vanille, Zitronenschale und geriebene Mandeln dazugeben und vermengen.</li>
+    <li>Kalte Butter mit einem grossen Messer in die Mehlmischung einarbeiten, Eigelb dazugeben und rasch zu einem glatten Teig kneten – <strong>nicht zu lange kneten</strong>.</li>
+    <li>In Frischhaltefolie einwickeln und 15 Minuten im Kühlschrank ruhen lassen.</li>
+    <li>Den Teig zu einer langen Rolle formen und in gleich grosse Stücke schneiden (ca. 15 g).</li>
+    <li>Jedes Stück zu einem kleinen Hörnchen (Hufeisenform) rollen.</li>
+    <li>Auf ein trockenes, mit Backpapier belegtes Blech legen.</li>
+    <li>Bei <strong>160–170 °C</strong> ca. 12–15 Minuten backen, bis sie leicht rosa sind – <strong>dürfen nicht braun werden</strong>.</li>
+    <li>Noch warm vorsichtig im Vanillezucker wälzen.</li>
+  </ol>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     LINZER GUETZLI
+════════════════════════════════════════ -->
+<section id="linzer">
+
+  <h2>Linzer Guetzli</h2>
+  <p class="meta">Linzer Augen · ca. 25 Paare</p>
+
+  <div class="top-photos">
+    <img class="bild" src="photos/linecke-kolacky-bild.png" alt="Linzer Guetzli – Linzer Augen">
+    <figure>
+      <img src="photos/linecke-kolacky-rezept.png" alt="Rezept aus einem alten Kochbuch">
+      <figcaption>Rezept aus einem alten Kochbuch</figcaption>
+    </figure>
+  </div>
+
+  <h3>Teig</h3>
+  <table>
+    <tr><td>Weissmehl</td>                                                   <td>250 g</td></tr>
+    <tr><td>Puderzucker</td>                                                 <td>130 g</td></tr>
+    <tr><td>Butter</td>                                                      <td>130 g</td></tr>
+    <tr><td>Ei</td>                                                          <td>1 Stk.</td></tr>
+    <tr><td>Vanilleextrakt</td>                                              <td>1 TL</td></tr>
+    <tr><td>abgeriebene Zitronenschale</td>                                  <td>½ Zitrone</td></tr>
+    <tr><td>Hirschhornsalz <em>(oder ½ TL Backpulver)</em></td>             <td>1 Prise</td></tr>
+  </table>
+
+  <h3>Füllung und Fertigstellung</h3>
+  <table>
+    <tr><td>Johannisbeer- oder Himbeerkonfitüre</td>  <td>150 g</td></tr>
+    <tr><td>Vanillezucker (zum Bestäuben)</td>         <td>20 g</td></tr>
+  </table>
+
+  <h3>Zubereitung</h3>
+  <ol>
+    <li>Gesiebtes Weissmehl mit Puderzucker, Vanille, Zitronenschale und Hirschhornsalz vermengen.</li>
+    <li>Butter dazugeben und mit einem Messer in die Mehlmischung einarbeiten. In der Mitte eine Mulde formen, das Ei dazugeben und rasch zu einem Teig kneten.</li>
+    <li>In Frischhaltefolie einwickeln und mindestens 30 Minuten im Kühlschrank ruhen lassen.</li>
+    <li>Den Ofen auf <strong>160–170 °C</strong> vorheizen. Das Blech mit Butter einfetten und leicht bemehlen.</li>
+    <li>Den gekühlten Teig ca. 3 mm dick ausrollen und runde Guetzli (ca. 4–5 cm) ausstechen.</li>
+    <li>Aus <strong>genau der Hälfte</strong> der Guetzli drei kleine runde Augen ausstechen.</li>
+    <li>Ca. 10–12 Minuten backen – die Guetzli sollen leicht rosa sein, nicht braun.</li>
+    <li>Vollständig auskühlen lassen.</li>
+    <li>Die vollen Guetzli mit Konfitüre bestreichen, die Guetzli mit den Augen darauflegen und leicht andrücken.</li>
+    <li>Mit Vanillezucker bestäuben.</li>
+  </ol>
+
+</section>
+
+<footer>
+  <a href="cs.html">→ Česky</a>
+</footer>
+
+</body>
+</html>
