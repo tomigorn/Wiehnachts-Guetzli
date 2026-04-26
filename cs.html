@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vánoční cukroví – babiččiny recepty</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <style>
     body {
       font-family: Georgia, 'Times New Roman', serif;
@@ -30,6 +31,14 @@
       margin-bottom: 3rem;
       padding: 0.6rem 0 1rem;
       border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdfaf5;
+    }
+
+    /* Ensure Bootstrap's .navbar doesn't override sticky positioning */
+    nav.navbar {
       position: sticky;
       top: 0;
       z-index: 10;
@@ -307,11 +316,9 @@
 <h1>Vánoční cukroví</h1>
 <p class="site-sub">babiččiny recepty</p>
 
-<nav>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+<nav class="navbar navbar-light">
+  <button class="nav-toggle navbar-toggler" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
+    <span class="navbar-toggler-icon"></span>
   </button>
   <div class="links" id="main-nav" aria-hidden="false">
     <a href="#orechy">Ořechy</a>
@@ -678,6 +685,7 @@
   <a href="index.html">→ Auf Deutsch</a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script>twemoji.parse(document.querySelector('.lang-switch'));</script>
 </body>
 </html>
