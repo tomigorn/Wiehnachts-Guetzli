@@ -48,9 +48,9 @@
       .nav-toggle .bar {
         display: block;
         width: 22px;
-        height: 2px;
-        background: #666;
-        margin: 4px 0;
+        height: 3px;
+        background: #333;
+        margin: 3px 0;
         border-radius: 2px;
       }
 
@@ -247,15 +247,34 @@
     footer a { color: #888; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    @media (max-width: 560px) {
+    @media (max-width: 720px) {
       .top-photos { flex-direction: column; }
       .top-photos figure { flex: unset; width: 100%; }
 
       /* On small screens hide nav links and show only lang flags + burger */
+      /* keep nav sticky on mobile so it remains visible */
+      nav { position: sticky; }
       nav .links { display: none; }
-      .nav-toggle { display: inline-flex; align-items: center; }
+      .nav-toggle { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding: 0.35rem; }
       .lang-switch { gap: 0.35rem; }
       .lang-switch a, .lang-switch .lang-active { font-size: 0.96rem; }
+
+      /* When opened, show the menu as an overlay below the nav */
+      .links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: #fdfaf5;
+        padding: 0.6rem 1rem;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        z-index: 20;
+      }
+      .links.mobile-open a { display: block; padding: 0.25rem 0; }
     }
 
     .variant-note {
@@ -294,13 +313,14 @@
     <span class="bar"></span>
     <span class="bar"></span>
   </button>
-  <div class="links">
+  <div class="links" id="main-nav" aria-hidden="false">
     <a href="#nusskoerbchen">Nusskörbchen</a>
     <a href="#schokoladenkugeln">Schokoladenkugeln</a>
     <a href="#nussguetzli">Nussguetzli</a>
     <a href="#vanillekipferl">Vanillekipferl</a>
     <a href="#linzer">Linzer Guetzli</a>
   </div>
+  
   <div class="lang-switch">
     <span class="lang-active">🇨🇭 Deutsch</span>
     <span class="sep">|</span>
@@ -313,18 +333,55 @@
     var btn = document.querySelector('.nav-toggle');
     var links = document.querySelector('.links');
     if(!btn || !links) return;
-    btn.addEventListener('click', function(){
+    var mq = window.matchMedia('(max-width: 720px)');
+
+    function openMenu(){
+      btn.setAttribute('aria-expanded', 'true');
+      links.classList.add('mobile-open');
+      links.setAttribute('aria-hidden', 'false');
+    }
+    function closeMenu(){
+      btn.setAttribute('aria-expanded', 'false');
+      links.classList.remove('mobile-open');
+      links.setAttribute('aria-hidden', 'true');
+    }
+
+    btn.addEventListener('click', function(e){
       var expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if(!expanded) {
-        links.style.display = 'flex';
-        links.style.flexDirection = 'column';
-        links.style.gap = '0.6rem';
-        links.style.marginBottom = '0.6rem';
+      if(expanded) closeMenu(); else openMenu();
+      e.stopPropagation();
+    });
+
+    // click outside to close
+    document.addEventListener('click', function(e){
+      if(!mq.matches) return;
+      if(!links.contains(e.target) && !btn.contains(e.target)) closeMenu();
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && links.classList.contains('mobile-open')) closeMenu();
+    });
+
+    // close when resizing to desktop
+    window.addEventListener('resize', function(){
+      if(!mq.matches){
+        links.classList.remove('mobile-open');
+        links.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'false');
       } else {
-        links.style.display = '';
+        links.setAttribute('aria-hidden', 'true');
       }
     });
+
+    // initialise ARIA state
+    if(mq.matches){
+      links.setAttribute('aria-hidden', 'true');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      links.setAttribute('aria-hidden', 'false');
+      btn.setAttribute('aria-expanded', 'false');
+    }
   })();
 </script>
 
