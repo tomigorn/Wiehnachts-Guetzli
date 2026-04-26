@@ -44,17 +44,22 @@
     nav .links a:hover { text-decoration: underline; }
 
     .lang {
-      font-size: 1.3rem;
       text-decoration: none;
       border: 1px solid #ccc;
       border-radius: 4px;
-      padding: 0.05rem 0.4rem;
+      padding: 0.2rem 0.35rem;
       white-space: nowrap;
       flex-shrink: 0;
-      line-height: 1;
+      display: inline-flex;
+      align-items: center;
     }
 
     .lang:hover { background: #f0ece4; }
+
+    .lang img.emoji {
+      height: 1.4rem;
+      width: auto;
+    }
 
     section + section {
       border-top: 1px solid #ddd;
@@ -217,6 +222,7 @@
       .top-photos figure { flex: unset; width: 100%; }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -526,5 +532,6 @@
   <a href="index.html">→ Auf Deutsch</a>
 </footer>
 
+<script>twemoji.parse(document.querySelector('.lang'));</script>
 </body>
 </html>
