@@ -28,8 +28,12 @@
       align-items: center;
       gap: 1rem;
       margin-bottom: 3rem;
-      padding-bottom: 1rem;
+      padding: 0.6rem 0 1rem;
       border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fdfaf5;
     }
 
     nav .links { flex: 1; }
@@ -196,7 +200,7 @@
       display: inline-block;
       vertical-align: top;
       width: 110px;
-      margin: 0 0.75rem 0 0;
+      margin: 0 0.6rem 0.6rem 0;
       text-align: center;
     }
 
@@ -228,6 +232,29 @@
     @media (max-width: 560px) {
       .top-photos { flex-direction: column; }
       .top-photos figure { flex: unset; width: 100%; }
+    }
+
+    .variant-note {
+      font-size: 0.82rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 0.9rem;
+      padding: 0.5rem 0.75rem;
+      border-left: 2px solid #e8e0d0;
+    }
+
+    @media print {
+      body { background: white; max-width: 100%; padding: 0.5rem 1rem; }
+      nav, footer, .recommend, .lang-switch { display: none; }
+      .top-photos figure { display: none; }
+      .top-photos { display: block; }
+      .top-photos img.bild { width: 160px; float: right; margin: 0 0 0.5rem 1rem; }
+      .solo-photo img { max-width: 180px; }
+      section + section { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #ccc; }
+      table, ol { break-inside: avoid; }
+      h2 { font-size: 1.2rem; }
+      h3 { font-size: 0.72rem; margin-top: 0.8rem; }
+      td, ol li, .timing, .variant-note { font-size: 0.85rem; }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
@@ -487,6 +514,8 @@
     <li>Pečeme v mírné troubě (<strong>160–170 °C</strong>) asi 12–15 minut, dokud nejsou světle narůžovělé – <strong>nesmí zhnědnout</strong>.</li>
     <li>Ještě teplé opatrně obalíme ve vanilkovém cukru.</li>
   </ol>
+
+  <p class="variant-note"><strong>Varianta II:</strong> 140 g hladké mouky · 105 g másla · 55 g mandlí · 40 g vanilkového cukru v těstě (místo cukru a vanilky zvlášť) · citronová kůra · 80 g cukru na obalení</p>
 
 </section>
 
