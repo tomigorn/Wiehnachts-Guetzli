@@ -1,1 +1,6 @@
-.claude/
+
+# AI working files
+.claude/settings.local.json
+CLAUDE.local.md
+AGENTS.md
+docs/superpowers/
